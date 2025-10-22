@@ -12,20 +12,24 @@ RUN apt-get update && apt-get install -y \
     libgl1 \
     && rm -rf /var/lib/apt/lists/*
 
-# Create and set working directory
+# Set working directory
 WORKDIR /app
 
-# Copy requirements first to leverage Docker cache
+# Copy dependency file
 COPY requirements.txt .
 
-# Install Python packages (without cache to save space)
-RUN pip install --no-cache-dir -r requirements.txt
+# Install dependencies
+RUN pip install --upgrade pip && pip install --no-cache-dir -r requirements.txt
 
-# Copy all source code
+# Copy all project files
 COPY . .
 
-# Expose FastAPI port
+# Create and switch to non-root user
+RUN adduser --disabled-password --gecos '' appuser
+USER appuser
+
+# Expose port for FastAPI
 EXPOSE 8000
 
-# Start the FastAPI app using uvicorn
+# Start FastAPI with uvicorn
 CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
