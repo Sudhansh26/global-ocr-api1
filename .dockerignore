@@ -1,11 +1,30 @@
+# Ignore Python cache
 __pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore IDE and system files
+.idea/
+.vscode/
+.DS_Store
+
+# Ignore environment files
+.env
+venv/
+env/
+
+# Ignore git and logs
+.git/
+.gitignore
+*.log
+
+# Ignore large or temporary files
+*.zip
+*.tar
+*.rar
+*.pdf
 *.png
 *.jpg
 *.jpeg
-*.pdf
-*.mp4
-*.zip
-node_modules/
-venv/
-.env
-.idea/
+*.csv
