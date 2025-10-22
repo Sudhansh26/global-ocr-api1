@@ -1,0 +1,11 @@
+__pycache__/
+*.png
+*.jpg
+*.jpeg
+*.pdf
+*.mp4
+*.zip
+node_modules/
+venv/
+.env
+.idea/
