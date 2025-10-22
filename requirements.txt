@@ -1,0 +1,15 @@
+fastapi==0.115.2
+uvicorn==0.32.0
+easyocr==1.7.1
+torch==2.3.0
+torchvision==0.18.0
+pdf2image==1.17.0
+pytesseract==0.3.10
+Pillow==10.2.0
+numpy==1.26.4
+fitz==0.0.1.dev2
+PyMuPDF==1.24.8
+opencv-python==4.7.0.72
+opencv-contrib-python==4.7.0.72
+python-multipart==0.0.9
+requests==2.32.3
